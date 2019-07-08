@@ -1,0 +1,9 @@
+{
+    "presets": [
+      ["@babel/preset-env", 
+        {"useBuiltIns": "usage" }//js高级语法使用polyfill，不完全引入polyfill.js,减少打包体积
+      ],
+      "@babel/preset-react"
+    ],
+    "plugins": ["@babel/plugin-transform-runtime"]
+  }
