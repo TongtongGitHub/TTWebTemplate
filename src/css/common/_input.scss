@@ -1,0 +1,63 @@
+.input {
+    $input-clr-bd:       #ced3d9;
+    $input-clr-hover-bd: #a1aab2;
+    $input-clr-focus-bd: #1470cc;
+    $input-radius:6px;
+    
+    $form-clr-dis-bg:    #edf0f2;
+    
+    $check-clr-main:     #1470cc;
+    $radio-clr-main:     #1470cc;
+    $upload-clr-main:    #1470cc;
+    
+    $check-clr-hover-bg: #d9ecff;
+    $check-clr-bd:       #a1aab3;
+    $radio-clr-bd:         $check-clr-bd;
+    $radio-clr-hover-bg:   $check-clr-hover-bg;
+
+    $tag-clr-dis:        #8ab8e5;
+
+    $toggle-clr-bd:      #cfdae6;
+
+    $form-clr-err:       #e64545;
+    $form-clr-bg:        #f5f7fa;
+    $form-clr-warn:      #ff7733;
+    $form-clr-succ:      #57ba56;
+    $form-clr-bd-light:  #e6ecf2;
+
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid $input-clr-bd;
+    border-radius: $input-radius;
+    color: $color-black1;
+    vertical-align: middle;
+    line-height: 1.5;
+    background-color: #fff;
+    box-sizing: border-box;
+    
+    &:hover {
+        border-color: $input-clr-hover-bd;
+        outline: 0;
+    }
+    &:focus {
+        border-color: $input-clr-focus-bd;
+        outline: 0;
+    }
+    
+    &[disabled],
+    &.disabled {
+        border-color: $input-clr-bd;
+        background-color: $form-clr-dis-bg;
+        cursor: not-allowed;
+    }
+    &.error {
+        border-color: $form-clr-err;
+        & + .input-ctnr,
+        & + .feedback-block + .input-ctnr {
+            border-color: $form-clr-err !important;
+        }
+    }
+}

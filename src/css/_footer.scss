@@ -1,0 +1,14 @@
+.footer {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    background: $color-white;
+    margin-top: -56px;
+    .footer-copyright {
+        color: $color-black3;
+        font-size: 14px;
+    }
+}

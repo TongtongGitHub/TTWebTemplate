@@ -1,0 +1,21 @@
+.btn {
+    $borderColor: #ced3d9;
+    $bgColor: #f5f7fa;
+    $bgHoverColor: #e6ecf2;
+
+    text-decoration: none;
+    outline: 0;
+    line-height: 1.5;
+    zoom: 1;
+    text-align: center;
+    color: $color-black1;
+    border: solid 1px $borderColor;
+    background-color: $bgColor;
+    padding: 5px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    box-sizing: border-box;
+    &:hover {
+        background-color: $bgHoverColor;
+    }
+}

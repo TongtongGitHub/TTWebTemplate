@@ -1,4 +1,5 @@
 .header {
+    position: absolute;
     width: 100%;
     height: auto;
     background: $color-white;
@@ -12,5 +13,33 @@
     .header-logo {
         font-size: 40px;
         color: $color-blue;
+        margin-right: 15px;
+    }
+    .header-search {
+        flex:1;
+        display: flex;
+        position: relative;
+        input {
+            flex:1;
+        }
+        button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+    .header-info {
+        align-content: flex-end;
+        display: flex;
+        align-items: center;
+    }
+    .header-account, .header-cart, .header-app {
+        font-size: 24px;
+        color: $color-black2;
+        margin-left: 20px;
+        cursor: pointer;
     }
 }

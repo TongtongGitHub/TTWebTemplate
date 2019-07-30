@@ -1,4 +1,35 @@
 @import 'common/var';
 @import 'common/reset';
 @import 'common/mixin';
-@import 'header'
+@import 'common/input';
+@import 'common/btn';
+@import 'common/common';
+@import 'header' ;
+@import 'footer' ;
+
+.main {
+    max-width: 1440px;
+    min-height: 100%;
+    margin: 0 auto;
+    padding-top: 80px;
+    padding-bottom: 56px;
+    box-sizing: border-box;
+    .main-banner{
+        background-repeat: no-repeat;
+        background-position: center;
+        display: block;
+        height: 100%;
+    }
+    .main-prod {
+        margin: 20px -10px;
+        display: flex;
+    }
+    .main-prod-item {
+        width: 16.6666%;
+        padding: 0 10px;
+    }
+}
+
+.swiper-container {
+    height: 300px;
+}
