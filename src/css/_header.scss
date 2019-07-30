@@ -1,0 +1,16 @@
+.header {
+    width: 100%;
+    height: auto;
+    background: $color-white;
+    @include boxShadow;
+    .header-main {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+    }
+    .header-logo {
+        font-size: 40px;
+        color: $color-blue;
+    }
+}
