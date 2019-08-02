@@ -1,3 +1,13 @@
 @mixin boxShadow {
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
+
+@mixin textEllipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@mixin borderRadius {
+    border-radius: 6px;
+}

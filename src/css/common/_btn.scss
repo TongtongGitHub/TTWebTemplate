@@ -16,6 +16,15 @@
     cursor: pointer;
     box-sizing: border-box;
     &:hover {
-        background-color: $bgHoverColor;
+        background-color: $bgHoverColor; 
+    }
+
+    &.btn-main {
+        border: 0;
+        background: #e64545;
+        color: #fff;
+        &:hover {
+            background: #d92121;
+        }
     }
 }

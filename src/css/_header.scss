@@ -1,13 +1,15 @@
-.header {
+.header {    
+    min-width: 320px;
     position: absolute;
     width: 100%;
     height: auto;
     background: $color-white;
     @include boxShadow;
+    z-index: 9;
     .header-main {
         max-width: 1440px;
         margin: 0 auto;
-        padding: 20px;
+        padding: 20px 20px 0px;
         display: flex;
     }
     .header-logo {
@@ -41,5 +43,99 @@
         color: $color-black2;
         margin-left: 20px;
         cursor: pointer;
+    }
+    .header-cat {
+        display: flex;    
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0px 20px;
+    }
+    .header-cat-item {
+        font-size: 14px;
+        color: $color-black2;
+        padding: 0 10px;
+        margin: 5px 0;
+        @include borderRadius;
+        cursor: pointer;
+        position: relative;
+        .header-cat-title {
+            height: 40px;
+            line-height: 40px;
+            color: $color-black1;
+        }
+        &:hover {
+            background: $color-bg2;
+            .header-cat-title {
+                .icon-down {
+                    transform: rotate(180deg)
+                }
+            }
+            .header-cat-list {
+                display: flex;
+                & > .header-cat-level {
+                    display: block;
+                }
+            }
+        }
+        .header-cat-list {
+            display: none;
+            position: absolute;
+            box-sizing: border-box;
+            left: 0;
+            top: 40px;
+        }
+        .header-cat-level {
+            box-shadow: rgba(0,0,0,0.247) 0 2px 5px 0;
+            display: none;
+            width: 280px;
+            min-width: 280px;
+            height: 454px;
+            border-left: 1px solid #dae0e5;
+            padding: 10px 0;
+            background: #fff;
+        }
+        .header-cat-level2 {
+            position: absolute;
+            left: 280px;
+            top: 0;
+        }
+        .header-cat-level3 {
+            position: absolute;
+            left: 280px;
+            top: 0;
+        }
+        .header-cat-list-item {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            color: $color-black2;
+            &:hover {
+                background: $color-bg2;
+                & > .header-cat-level {
+                    display: block;
+                }
+            }
+            .title {
+                padding: 10px 20px;
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .header {
+        .header-main {
+            justify-content: space-between;
+            padding-bottom: 80px;
+        }
+        .header-search {
+            height: 40px;
+            line-height: 40px;
+            position: absolute;
+            top: 80px;
+            left: 20px;
+            right: 20px;
+        }
     }
 }

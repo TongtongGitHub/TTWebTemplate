@@ -13,3 +13,39 @@
         margin: auto;
     }
 }
+
+.max-1024-show{
+    display: none;
+}
+
+.max-768-show{
+    display: none;
+}
+
+.max-1024-hide{
+    display: block;
+}
+
+.max-768-hide{
+    display: block;
+}
+
+@media screen and (max-width: 1024px) {
+    .max-1024-show{
+        display: block;
+    }
+    .max-1024-hide{
+        display: none;
+    }
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 768px) {
+    .max-768-show{
+        display: block;
+    }
+    .max-768-hide{
+        display: none;
+    }
+}
