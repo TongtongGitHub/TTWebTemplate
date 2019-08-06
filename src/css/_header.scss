@@ -6,6 +6,22 @@
     background: $color-white;
     @include boxShadow;
     z-index: 9;
+    .header-mask {
+        visibility: hidden;
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: #000;
+        opacity: 0;
+        z-index: 8;
+        transition: all .2s;
+        opacity: .5;
+        &.show {
+            visibility: visible;
+        }
+    }
     .header-main {
         max-width: 1440px;
         margin: 0 auto;
@@ -50,15 +66,50 @@
         margin: 0 auto;
         padding: 0px 20px;
     }
+    .header-menu {
+        display: flex;
+        align-items: center;
+        &-icon{
+            font-size: 24px;
+            color: $color-black2;
+            cursor: pointer;
+        }
+        &-content {
+            visibility: hidden;
+            position: fixed;
+            top: 0;
+            left: -280px;
+            bottom: 0;
+            width: 280px;
+            background: $color-white;
+            z-index: 9;
+            transition: 200ms;
+            padding: 20px 0;
+        }
+        &-item {
+            padding: 10px 20px;
+            color: $color-black1;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            &:hover {
+                background: $color-bg2;
+            }
+        }
+        &-show {
+            visibility: visible;
+            transform: translateX(280px);
+        }
+    }
     .header-cat-item {
         font-size: 14px;
         color: $color-black2;
         padding: 0 10px;
         margin: 5px 0;
         @include borderRadius;
-        cursor: pointer;
         position: relative;
         .header-cat-title {
+            cursor: pointer;
             height: 40px;
             line-height: 40px;
             color: $color-black1;
@@ -103,12 +154,16 @@
             position: absolute;
             left: 280px;
             top: 0;
+            .header-cat-list-item:hover {
+                background: $color-bg2;
+            }
         }
         .header-cat-list-item {
             overflow: hidden;
             text-overflow: ellipsis;
             color: $color-black2;
-            &:hover {
+            cursor: pointer;
+            &.hover {
                 background: $color-bg2;
                 & > .header-cat-level {
                     display: block;
@@ -123,7 +178,7 @@
     }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 1024px){
     .header {
         .header-main {
             justify-content: space-between;
@@ -136,6 +191,9 @@
             top: 80px;
             left: 20px;
             right: 20px;
+        }
+        .header-logo{
+            margin-right: -100px;
         }
     }
 }

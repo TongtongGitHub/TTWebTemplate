@@ -5,7 +5,7 @@ import Home from "../pages/home.jsx";
 const PrimaryLayout = () => (
   <div className="primary-layout">
     <Switch>
-      <Route path="/" exact component={Home} />
+      <Route path="*" exact component={Home} />
     </Switch>
   </div>
 );

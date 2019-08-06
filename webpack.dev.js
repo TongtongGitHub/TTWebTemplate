@@ -9,7 +9,7 @@ module.exports = merge(commonConfig, {
     devtool: 'cheap-module-eval-soure-map',
     output: {
         // 输出目录
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "./dist"),
         // 文件名称
         filename: "bundle.js",
         chunkFilename: '[name].js'
