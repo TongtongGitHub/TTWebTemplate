@@ -5,6 +5,7 @@ const commonConfig = require('./webpack.common.js')
 const AddAssetHtmlWebpackPlugin = require('add-asset-html-webpack-plugin')
 const PurifyCSS = require('purifycss-webpack')
 const glob = require('glob-all')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = merge(commonConfig, {
@@ -17,6 +18,29 @@ module.exports = merge(commonConfig, {
         chunkFilename: '[name].[contenthash].js'
     },
     devtool: 'cheap-module-source-map',
+    module: {
+        rules: [
+            {
+                test: /\.(sc|sa|c)ss$/,
+                exclude: /node_modules/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    // "style-loader",
+                    "css-loader", // 编译css
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                          ident: 'postcss',
+                          plugins: [
+                            require('autoprefixer')()
+                          ]
+                        }
+                      },
+                    "sass-loader" // 编译scss
+                ]
+            },
+        ]
+    },
     optimization: {
         usedExports: true,
         splitChunks: {
@@ -35,6 +59,11 @@ module.exports = merge(commonConfig, {
         },
     },
     plugins: [
+        // css单独提取
+        new MiniCssExtractPlugin({
+            filename: "[name].css",
+            chunkFilename: "[id].css"
+        }),
         // 清除无用 css---生产环境---csstree-shaking
         new PurifyCSS({
             paths: glob.sync([
@@ -48,6 +77,6 @@ module.exports = merge(commonConfig, {
         }),
         new webpack.DllReferencePlugin({
             manifest: path.resolve(__dirname, 'lib/jquery-manifest.json')
-        })
+        }),
     ]
 });

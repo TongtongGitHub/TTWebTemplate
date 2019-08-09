@@ -11,7 +11,9 @@ export default function Header1(){
             <div className='header-main'>
                 <Menu></Menu>
                 <div className='header-logo'>
-                    <FontAwesomeIcon icon={faStore} />
+                    <a href='/'>
+                        <FontAwesomeIcon icon={faStore} />
+                    </a>
                 </div>
                 <div className='header-search'>
                     <input className='input input-text'></input>

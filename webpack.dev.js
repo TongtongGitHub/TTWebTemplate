@@ -14,6 +14,28 @@ module.exports = merge(commonConfig, {
         filename: "bundle.js",
         chunkFilename: '[name].js'
     },
+    module: {
+        rules: [
+            {
+                test: /\.(sc|sa|c)ss$/,
+                exclude: /node_modules/,
+                use: [
+                    "style-loader",
+                    "css-loader", // 编译css
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                          ident: 'postcss',
+                          plugins: [
+                            require('autoprefixer')()
+                          ]
+                        }
+                      },
+                    "sass-loader" // 编译scss
+                ]
+            }
+        ]
+    },
     plugins: [
         //开启HMR(热替换功能,替换更新部分,不重载页面！) 相当于在命令行加 --hot
         new webpack.HotModuleReplacementPlugin()

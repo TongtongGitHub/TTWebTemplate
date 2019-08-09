@@ -2,7 +2,6 @@ const path = require("path");
 const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: ["./src/index.js"],
@@ -27,24 +26,6 @@ module.exports = {
                     {
                         loader: "babel-loader"
                     }
-                ]
-            },
-            {
-                test: /\.(sc|sa|c)ss$/,
-                exclude: /node_modules/,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    "css-loader", // 编译css
-                    {
-                        loader: 'postcss-loader',
-                        options: {
-                          ident: 'postcss',
-                          plugins: [
-                            require('autoprefixer')()
-                          ]
-                        }
-                      },
-                    "sass-loader" // 编译scss
                 ]
             },
             {
@@ -86,10 +67,5 @@ module.exports = {
             }
         }),
         new webpack.ProvidePlugin({ $: 'jquery' }),
-        // css单独提取
-        new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-        })
     ]
 };
