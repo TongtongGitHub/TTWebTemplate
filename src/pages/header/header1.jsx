@@ -3,6 +3,7 @@ import { faStore,faUserCircle,faShoppingCart,faMobileAlt,faChevronDown, faChevro
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Category from './category';
 import Menu from './menu';
+import ShoppingCart from './shoppingCart';
 
 
 export default function Header1(){
@@ -23,9 +24,7 @@ export default function Header1(){
                     <div className='header-account'>
                         <FontAwesomeIcon icon={faUserCircle}></FontAwesomeIcon>
                     </div>
-                    <div className='header-cart'>
-                        <FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon>
-                    </div>
+                    <ShoppingCart></ShoppingCart>
                     <div className='header-app'>
                         <FontAwesomeIcon icon={faMobileAlt}></FontAwesomeIcon>
                     </div>

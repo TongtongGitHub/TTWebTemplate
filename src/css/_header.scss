@@ -57,8 +57,61 @@
     .header-account, .header-cart, .header-app {
         font-size: 24px;
         color: $color-black2;
-        margin-left: 20px;
+    }
+    .header-cart-title {
+        display: flex;
+        align-items: center;
+        position: relative;
+        height: 40px;
+        line-height: 40px;
         cursor: pointer;
+        padding: 0 10px;
+        &:hover {
+            .header-cart-content {
+                display: block;
+            }
+        }
+    }
+    .header-cart-content {
+        display: none;
+        background: #fff;
+        @include boxShadow;
+        position: absolute;
+        top: 40;
+        right: 0;
+        width: 320px;
+        text-align: center;
+        padding: 10px 0;
+    }
+    .header-cart-item {
+        padding: 5px 10px;
+        display: flex;
+        align-items: center;
+        height: 50px;
+        cursor: pointer;
+        &:hover {
+            background: $color-bg2;
+        }
+        .img-wrap {
+            width: 50px;
+        }
+        .name {
+            font-size: 16px;
+            flex:1;
+            padding: 0 10px;
+        }
+        .price {
+            font-size: 16px;
+            flex:1;
+        }
+        .operation {
+            padding-left: 10px;
+            font-size: 16px;
+            width: 50px;
+            &:hover {
+                color: $color-yellow;
+            }
+        }
     }
     .header-cat {
         display: flex;    
