@@ -48,7 +48,7 @@ export default function Home() {
                             return (
                             <div key={item} className='home-prod-item'>
                                 <div className='img-wrap'>
-                                    <img src='https://via.placeholder.com/300x300'></img>
+                                    <a href='/productDetail'><img src='https://via.placeholder.com/300x300'></img></a>
                                 </div>
                                 <div className='name'>item</div>
                                 <div className='desc'>This is an item This is an item This is an item</div>
@@ -69,9 +69,9 @@ export default function Home() {
                         {
                             [1,2,3,4,5,6,7,8].map(item =>{
                                 return (
-                                    <div key={item} className='home-industry-item'>
+                                    <a href='/productDetail' key={item} className='home-industry-item'>
                                         <img src='https://via.placeholder.com/300x300'></img>
-                                    </div>
+                                    </a>
                                 );
                             })
                         }

@@ -22,6 +22,14 @@
     display: block;
 }
 
+.show-block {
+    display: block;
+}
+
+.hide {
+    display: none !important;
+}
+
 @media screen and (min-width: 1025px) {
     .max-1024-show{
         display: none !important;
